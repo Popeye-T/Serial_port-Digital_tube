@@ -1,0 +1,6 @@
+
+State Machine - |seg_test|uart_seg:uart_seg_inst|state
+Name state.IDLE state.DONE state.RECEIVING 
+state.IDLE 0 0 0 
+state.RECEIVING 1 0 1 
+state.DONE 1 1 0 

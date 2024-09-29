@@ -1,0 +1,186 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Verilog/quartus/uart_seg_f/seg_test_f _t/simulation/modelsim
+vcount_m10
+Z1 !s110 1727177468
+!i10b 1
+!s100 KaVW>K0dPaQRLR`Y^9j@F0
+II6ec0hjk_1<UoJ9GX0PUH0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1502076570
+8C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/count_m10.v
+FC:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/count_m10.v
+Z3 L0 30
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1727177467.000000
+!s107 C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/count_m10.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src|C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/count_m10.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work {+incdir+C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src}
+Z8 tCvgOpt 0
+vgen_clk
+R1
+!i10b 1
+!s100 ;fRA3[SogSR3DC5Eh6j^?2
+IiUW:22mTkD:U?;zZ?BD9i0
+R2
+R0
+w1727167671
+8C:/Verilog/quartus/uart_seg_f/seg_test_f _t/gen_clk.v
+FC:/Verilog/quartus/uart_seg_f/seg_test_f _t/gen_clk.v
+L0 39
+R4
+r1
+!s85 0
+31
+Z9 !s108 1727177468.000000
+!s107 C:/Verilog/quartus/uart_seg_f/seg_test_f _t/gen_clk.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/quartus/uart_seg_f/seg_test_f _t|C:/Verilog/quartus/uart_seg_f/seg_test_f _t/gen_clk.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work {+incdir+C:/Verilog/quartus/uart_seg_f/seg_test_f _t}
+R8
+vgen_clk_altpll
+R1
+!i10b 1
+!s100 RSc^d4_Q89D5Uo8mLUHMO3
+ImOGe_EjJgF^2FbOT?70IR0
+R2
+R0
+w1727168280
+8C:/Verilog/quartus/uart_seg_f/seg_test_f _t/db/gen_clk_altpll.v
+FC:/Verilog/quartus/uart_seg_f/seg_test_f _t/db/gen_clk_altpll.v
+R3
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Verilog/quartus/uart_seg_f/seg_test_f _t/db/gen_clk_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/quartus/uart_seg_f/seg_test_f _t/db|C:/Verilog/quartus/uart_seg_f/seg_test_f _t/db/gen_clk_altpll.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work {+incdir+C:/Verilog/quartus/uart_seg_f/seg_test_f _t/db}
+R8
+vseg_decoder
+Z10 !s110 1727177467
+!i10b 1
+!s100 Mh<:PPd=ZNG=]FEPD7Fef2
+IZYLcOhWL1;S7nW;mFhmYS3
+R2
+R0
+w1680676456
+8C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/seg_decoder.v
+FC:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/seg_decoder.v
+L0 29
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/seg_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src|C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/seg_decoder.v|
+!i113 1
+R6
+R7
+R8
+vseg_test
+R10
+!i10b 1
+!s100 779;d>djU<B4[DOPBRT:h2
+I7_m;45C9]7khb?SMhEKen0
+R2
+R0
+w1727176158
+8C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/seg_test.v
+FC:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/seg_test.v
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/seg_test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src|C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/seg_test.v|
+!i113 1
+R6
+R7
+R8
+vtb_seg_test
+R1
+!i10b 1
+!s100 T1m^<Bm=7DWbF>@2_e=@G0
+I:Q<>n24XC92JFnD4=I:JA1
+R2
+R0
+w1727177337
+8C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/tb_seg_test.v
+FC:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/tb_seg_test.v
+L0 2
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/tb_seg_test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src|C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/tb_seg_test.v|
+!i113 1
+R6
+R7
+R8
+vuart_rx
+R1
+!i10b 1
+!s100 3>OD5M>0AVPVUkF;I3]6g3
+IPbZ^UG7`inWIf]5zHa_?g0
+R2
+R0
+w1727168266
+8C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/uart_rx.v
+FC:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/uart_rx.v
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/uart_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src|C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/uart_rx.v|
+!i113 1
+R6
+R7
+R8
+vuart_seg
+R1
+!i10b 1
+!s100 _MS1:;T?NZcS4ZReEl=VB1
+IHei99?kBGP7d7?0RMc1FI1
+R2
+R0
+w1727166312
+8C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/uart_seg.v
+FC:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/uart_seg.v
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/uart_seg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src|C:/Verilog/quartus/uart_seg_f/seg_test_f _t/src/uart_seg.v|
+!i113 1
+R6
+R7
+R8

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>daitou.ico</file>
+    </qresource>
+</RCC>

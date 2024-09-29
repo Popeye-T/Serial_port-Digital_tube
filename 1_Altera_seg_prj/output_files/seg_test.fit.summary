@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Sep 24 19:11:09 2024
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : seg_test
+Top-level Entity Name : seg_test
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 2,319 / 6,272 ( 37 % )
+    Total combinational functions : 1,906 / 6,272 ( 30 % )
+    Dedicated logic registers : 968 / 6,272 ( 15 % )
+Total registers : 968
+Total pins : 59 / 92 ( 64 % )
+Total virtual pins : 0
+Total memory bits : 4,096 / 276,480 ( 1 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 1 / 2 ( 50 % )
