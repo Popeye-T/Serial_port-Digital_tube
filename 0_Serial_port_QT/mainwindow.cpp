@@ -10,13 +10,25 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowIcon(QIcon(":/img/daitou.ico"));//设置图标
     ui->serial_toggle->setEnabled(false);
 
-    connect(serial, &QSerialPort::readyRead, this, &MainWindow::data_recv);
+    // 初始化定时器
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &MainWindow::updateDateTime);
+    timer->start(100); // 每100毫秒更新一次
+    updateDateTime(); // 立即显示时间
 }
 
 MainWindow::~MainWindow()
 {
+    delete timer; // 释放定时器
     delete ui;
 }
+
+void MainWindow::updateDateTime()
+{
+    QString currentTime = QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss.zzz");
+    ui->local_time->setText(currentTime); // 将时间显示在状态栏
+}
+
 
 void MainWindow::on_serial_scan_clicked()
 {
@@ -34,11 +46,6 @@ void MainWindow::on_serial_scan_clicked()
         QString itemText;
 
         itemText = QString("%1-%2").arg(portName, portDescription);
-        // if (portDescription.contains("蓝牙", Qt::CaseInsensitive)) {
-        //     itemText = QString("%1-%2").arg(portName, portDescription);
-        // } else {
-        //     itemText = QString("%1-%2").arg(portName, portDescription);
-        // }
 
         ui->serial_name->addItem(itemText); // 将串口名添加到界面上
     }
@@ -156,85 +163,68 @@ void MainWindow::sendPlainData()
 }
 
 
-// void MainWindow::on_message_send_btn_clicked()
-// {
-//     if(serial->isOpen()){
-//         QString str = ui->data_send->toPlainText();
-//         QStringList list = str.split("\n");
-//         for(int i = 0; i < list.size(); i++){
-//             if(list[i].isEmpty())
-//                 continue;
-//             else{
-//                 QByteArray asciiData;
-//                 for (QChar c : list[i]) {
-//                     asciiData.append(static_cast<char>(c.toLatin1())); // 转换每个字符为ASCII
-//                 }
-//                 serial->write(asciiData);
-//             }
-//         }
-//     }
-//     else{
-//         return;
-//     }
-// }
-
-
-void MainWindow::data_recv(){
-    QByteArray buffer = serial->readAll();
-    QString string = "";
-    string += tr(buffer);
-    ui->data_recv->insertPlainText(string);
-    ui->data_recv->moveCursor(QTextCursor::End);
-}
-
-void MainWindow::data_recv_hex()
-{
-    QByteArray buffer = serial->readAll();
-    QString hexDisplay = "";
-    for (char byte : buffer) {
-        hexDisplay += QString("%1 ").arg(static_cast<quint8>(byte), 2, 16, QLatin1Char('0'));
-    }
-    ui->data_recv->insertPlainText(hexDisplay);
-    ui->data_recv->moveCursor(QTextCursor::End);
-}
-
 void MainWindow::on_number_send_btn_clicked()
 {
-    if (serial->isOpen()) {
-        // 从 QSpinBox 获取数值
-        int spinBoxValue = ui->spinBox->value();
-        QString hexValue = QString::number(spinBoxValue, 16);
+    // 从 QSpinBox 获取数值
+    int spinBoxValue = ui->user_freq_set_2->value();
+    QString hexValue = QString::number(spinBoxValue, 16);
 
-        // 判断十六进制值长度是否小于 8（32 位为 8 个十六进制字符）
-        if (hexValue.length() < 8) {
-            QString padding(8 - hexValue.length(), '0');
-            hexValue = padding + hexValue;
-        }
-
-        // 构建要发送的十六进制数据
-        QByteArray data;
-        data.append(char(0xFF));
-        data.append(char(0xFF));
-        for (int i = 0; i < hexValue.length(); i += 2) {
-            bool ok;
-            int byteValue = hexValue.mid(i, 2).toInt(&ok, 16);
-            if (ok) {
-                data.append(char(byteValue));
-            }
-        }
-        // data.append(char(0x00));
-        // data.append(char(0x00));
-
-        serial->write(data);
-    } else {
-        return;
+    // 判断十六进制值长度是否小于 6（32 位为 8 个十六进制字符）
+    if (hexValue.length() < 6) {
+        QString padding(6 - hexValue.length(), '0');
+        hexValue = padding + hexValue;
     }
-}
 
+    // 获取 QTimeEdit 中的时间
+    QTime currentTime = ui->timeEdit->time();
 
-void MainWindow::on_message_recv_clean_btn_clicked()
-{
-    ui->data_recv->clear();
+    // 获取分钟、秒钟和毫秒
+    int minute = currentTime.minute();
+    int second = currentTime.second();
+    int msec = currentTime.msec();
+
+    // 解析分钟和秒钟的十位和个位
+    unsigned char minuteTens = (minute / 10) & 0x0F;  // 十位，取低四位
+    unsigned char minuteOnes = (minute % 10) & 0x0F;  // 个位，取低四位
+    unsigned char secondTens = (second / 10) & 0x0F;  // 十位，取低四位
+    unsigned char secondOnes = (second % 10) & 0x0F;  // 个位，取低四位
+    // 解析毫秒的百位、十位和个位
+    unsigned char msecHundreds = (msec / 100) & 0x0F;  // 百位
+    unsigned char msecTens = ((msec % 100) / 10) & 0x0F; // 十位
+    unsigned char msecOnes = (msec % 10) & 0x0F;  // 个位
+
+    // 拼接分钟和秒钟的十位和个位为8位数据
+    unsigned char minuteData = (minuteTens << 4) | minuteOnes; // 高4位是十位，低4位是个位
+    unsigned char secondData = (secondTens << 4) | secondOnes; // 高4位是十位，低4位是个位
+    // 拼接毫秒的百位和十位为8位数据
+    unsigned char msecData1 = (msecHundreds << 4) | msecTens;  // 高4位是百位，低4位是十位
+    // 拼接毫秒的个位和F为8位数据
+    unsigned char msecData2 = (msecOnes << 4) | 0x0F;  // 高4位是F，低4位是个位
+
+    // 构建要发送的数据
+    QByteArray data;
+    data.append(char(0xFF)); // 添加第一个 FF
+    data.append(char(0xFF)); // 添加第二个 FF
+    data.append(minuteData); // 添加分钟数据（8位）
+    data.append(secondData); // 添加秒钟数据（8位）
+    data.append(msecData1); // 添加分钟数据（8位）
+    data.append(msecData2); // 添加秒钟数据（8位）
+
+    for (int i = 0; i < hexValue.length(); i += 2) {
+        bool ok;
+        int byteValue = hexValue.mid(i, 2).toInt(&ok, 16);
+        if (ok) {
+            data.append(char(byteValue));
+        }
+    }
+
+    // 检查串口是否打开并发送数据
+    if (serial->isOpen()) {
+        serial->write(data); // 发送数据
+        qDebug() << "已发送数据：" << data.toHex().toUpper(); // 打印发送的十六进制数据
+    } else {
+        qDebug() << "串口未打开，无法发送数据！";
+    }
 }
 
 
@@ -243,24 +233,60 @@ void MainWindow::on_on_message_send_clean_btn_clicked_clicked()
     ui->data_send->clear();
 }
 
-void MainWindow::on_checkBox_recv_clicked()
+void MainWindow::on_local_time_freq_btn_clicked()
 {
-    status = ui->checkBox_recv->isChecked();
-    // 断开之前可能的连接
-    disconnect(serial, &QSerialPort::readyRead, this, nullptr);
-    if (!status) {
-        // 尝试连接并检查连接是否成功
-        if (connect(serial, &QSerialPort::readyRead, this, &MainWindow::data_recv)) {
-            qDebug() << "Connected to data_recv successfully.";
-        } else {
-            qDebug() << "Failed to connect to data_recv.";
-        }
-    } else {
-        // 尝试连接并检查连接是否成功
-        if (connect(serial, &QSerialPort::readyRead, this, &MainWindow::data_recv_hex)) {
-            qDebug() << "Connected to data_recv_hex successfully.";
-        } else {
-            qDebug() << "Failed to connect to data_recv_hex.";
+    // 从 QSpinBox 获取数值
+    int spinBoxValue = ui->user_freq_set_1->value();
+    QString hexValue = QString::number(spinBoxValue, 16);
+
+    // 判断十六进制值长度是否小于 6（32 位为 8 个十六进制字符）
+    if (hexValue.length() < 6) {
+        QString padding(6 - hexValue.length(), '0');
+        hexValue = padding + hexValue;
+    }
+
+    // 获取当前时间
+    QTime currentTime = QTime::currentTime();
+
+    // 获取分钟和秒钟
+    int minute = currentTime.minute();
+    int second = currentTime.second();
+
+    // 解析分钟和秒钟的十位和个位
+    unsigned char minuteTens = (minute / 10) & 0x0F;  // 十位，取低四位
+    unsigned char minuteOnes = (minute % 10) & 0x0F;  // 个位，取低四位
+    unsigned char secondTens = (second / 10) & 0x0F;  // 十位，取低四位
+    unsigned char secondOnes = (second % 10) & 0x0F;  // 个位，取低四位
+
+    // 拼接分钟和秒钟的十位和个位为8位数据
+    unsigned char minuteData = (minuteTens << 4) | minuteOnes; // 高4位是十位，低4位是个位
+    unsigned char secondData = (secondTens << 4) | secondOnes; // 高4位是十位，低4位是个位
+
+    // 构建要发送的数据
+    QByteArray data;
+    data.append(char(0xFF)); // 添加第一个 FF
+    data.append(char(0xFF)); // 添加第二个 FF
+    data.append(minuteData); // 添加分钟数据（8位）
+    data.append(secondData); // 添加秒钟数据（8位）
+    data.append(char(0x00)); // 添加第二个 FF
+    data.append(char(0x0F)); // 添加第二个 FF
+
+    for (int i = 0; i < hexValue.length(); i += 2) {
+        bool ok;
+        int byteValue = hexValue.mid(i, 2).toInt(&ok, 16);
+        if (ok) {
+            data.append(char(byteValue));
         }
     }
+
+    // 检查串口是否打开并发送数据
+    if (serial->isOpen()) {
+        serial->write(data); // 发送数据
+        qDebug() << "已发送数据：" << data.toHex().toUpper(); // 打印发送的十六进制数据
+    } else {
+        qDebug() << "串口未打开，无法发送数据！";
+    }
 }
+
+
+

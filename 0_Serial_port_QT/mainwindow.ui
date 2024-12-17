@@ -310,10 +310,10 @@
    <widget class="QPushButton" name="number_send_btn">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>420</y>
-      <width>120</width>
-      <height>30</height>
+      <x>470</x>
+      <y>260</y>
+      <width>51</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
@@ -361,44 +361,24 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QSpinBox" name="spinBox">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>360</y>
-      <width>221</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string/>
-    </property>
-    <property name="maximum">
-     <number>50000000</number>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>250</y>
-      <width>261</width>
-      <height>111</height>
+      <x>270</x>
+      <y>60</y>
+      <width>251</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>宋体</family>
-      <pointsize>12</pointsize>
+      <pointsize>16</pointsize>
       <hintingpreference>PreferDefaultHinting</hintingpreference>
      </font>
     </property>
     <property name="text">
-     <string>待发送数据：
-数据包=16bit帧头+32bit数据
-①-帧头FFFF
-②-32bit数据，低位为待发送数据，高位填充0
-③10-&gt;16进制转换</string>
+     <string>年-月-日  时:分:秒:毫秒</string>
     </property>
     <property name="wordWrap">
      <bool>true</bool>
@@ -408,18 +388,18 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>360</y>
-      <width>271</width>
-      <height>91</height>
+      <y>390</y>
+      <width>501</width>
+      <height>61</height>
      </rect>
     </property>
    </widget>
    <widget class="QCheckBox" name="checkBox">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>320</y>
-      <width>161</width>
+      <x>20</x>
+      <y>300</y>
+      <width>251</width>
       <height>19</height>
      </rect>
     </property>
@@ -429,14 +409,17 @@
       <pointsize>15</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 255);</string>
+    </property>
     <property name="text">
-     <string>16进制发送</string>
+     <string>3-备用选项：16进制发送</string>
     </property>
    </widget>
    <widget class="QPushButton" name="message_send_btn">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>400</x>
       <y>390</y>
       <width>120</width>
       <height>30</height>
@@ -452,39 +435,10 @@
      <string>发送</string>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="data_recv">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>90</y>
-      <width>261</width>
-      <height>151</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="message_recv_clean_btn">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>200</y>
-      <width>120</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>宋体</family>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>清除</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="on_message_send_clean_btn_clicked">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>400</x>
       <y>420</y>
       <width>120</width>
       <height>30</height>
@@ -500,57 +454,13 @@
      <string>清除</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox_recv">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>60</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>宋体</family>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>16进制接收</string>
-    </property>
-    <property name="tristate">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_9">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>60</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>宋体</family>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>数据接收：</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>20</x>
       <y>340</y>
-      <width>301</width>
-      <height>20</height>
+      <width>501</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
@@ -561,10 +471,262 @@
      </font>
     </property>
     <property name="text">
-     <string>备用选项：16进制下手动加帧头和4bit0填充</string>
+     <string>前面FFFF为帧头，50 23 10 0f，去掉f剩余数据为时间，两位分钟，两位秒，三位毫秒。后面6位为计数频率。</string>
     </property>
     <property name="wordWrap">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>140</y>
+      <width>251</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>16</pointsize>
+      <hintingpreference>PreferDefaultHinting</hintingpreference>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 255);</string>
+    </property>
+    <property name="text">
+     <string>1-发送本地时间及频率</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>220</y>
+      <width>251</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>16</pointsize>
+      <hintingpreference>PreferDefaultHinting</hintingpreference>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 255);</string>
+    </property>
+    <property name="text">
+     <string>2-发送自定义时间及频率</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="user_freq_set_2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>310</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="maximum">
+     <number>500000000</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+      <hintingpreference>PreferDefaultHinting</hintingpreference>
+     </font>
+    </property>
+    <property name="text">
+     <string>16进制下手动输入发送</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="local_time">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>100</y>
+      <width>281</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>16</pointsize>
+      <hintingpreference>PreferDefaultHinting</hintingpreference>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Local-time</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="user_freq_set_1">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>170</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="maximum">
+     <number>500000000</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="local_time_freq_btn">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>170</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>发送</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>170</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>16</pointsize>
+      <hintingpreference>PreferDefaultHinting</hintingpreference>
+     </font>
+    </property>
+    <property name="text">
+     <string>频率</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>310</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>16</pointsize>
+      <hintingpreference>PreferDefaultHinting</hintingpreference>
+     </font>
+    </property>
+    <property name="text">
+     <string>频率</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>260</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>16</pointsize>
+      <hintingpreference>PreferDefaultHinting</hintingpreference>
+     </font>
+    </property>
+    <property name="text">
+     <string>时间</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QTimeEdit" name="timeEdit">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>260</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="displayFormat">
+     <string>mm:ss.zzz</string>
     </property>
    </widget>
    <zorder>data_send</zorder>
@@ -582,16 +744,22 @@
    <zorder>open_serial_port</zorder>
    <zorder>number_send_btn</zorder>
    <zorder>serial_toggle</zorder>
-   <zorder>spinBox</zorder>
    <zorder>label_8</zorder>
    <zorder>checkBox</zorder>
    <zorder>message_send_btn</zorder>
-   <zorder>data_recv</zorder>
-   <zorder>message_recv_clean_btn</zorder>
    <zorder>on_message_send_clean_btn_clicked</zorder>
-   <zorder>checkBox_recv</zorder>
-   <zorder>label_9</zorder>
    <zorder>label_10</zorder>
+   <zorder>label_9</zorder>
+   <zorder>label_11</zorder>
+   <zorder>user_freq_set_2</zorder>
+   <zorder>label_12</zorder>
+   <zorder>local_time</zorder>
+   <zorder>user_freq_set_1</zorder>
+   <zorder>local_time_freq_btn</zorder>
+   <zorder>label_13</zorder>
+   <zorder>label_14</zorder>
+   <zorder>label_15</zorder>
+   <zorder>timeEdit</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
