@@ -1,0 +1,208 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/FPGA/Altera/seg/seg_test_3/simulation/modelsim
+vcount_m10
+Z1 !s110 1732264719
+!i10b 1
+!s100 Ig==G40K[g4Y9<12DD_hV3
+I0RB;;;l9g04hn:0NEQVan1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1730723379
+8E:/FPGA/Altera/seg/seg_test_3/src/count_m10.v
+FE:/FPGA/Altera/seg/seg_test_3/src/count_m10.v
+Z3 L0 30
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1732264719.000000
+!s107 E:/FPGA/Altera/seg/seg_test_3/src/count_m10.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA/Altera/seg/seg_test_3/src|E:/FPGA/Altera/seg/seg_test_3/src/count_m10.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+E:/FPGA/Altera/seg/seg_test_3/src
+Z8 tCvgOpt 0
+vcount_m2
+R1
+!i10b 1
+!s100 U:JFmD<iB4[9dgbBiJS<F0
+IhDzODmX79ZS0j5d[;kiG93
+R2
+R0
+w1730794314
+8E:/FPGA/Altera/seg/seg_test_3/src/count_m2.v
+FE:/FPGA/Altera/seg/seg_test_3/src/count_m2.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/FPGA/Altera/seg/seg_test_3/src/count_m2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA/Altera/seg/seg_test_3/src|E:/FPGA/Altera/seg/seg_test_3/src/count_m2.v|
+!i113 1
+R6
+R7
+R8
+vcount_m6
+R1
+!i10b 1
+!s100 aTYZBGDbFo?9[oY?[fK;=2
+I<LANmV41b^=LNb=Jl<B[T0
+R2
+R0
+w1730723370
+8E:/FPGA/Altera/seg/seg_test_3/src/count_m6.v
+FE:/FPGA/Altera/seg/seg_test_3/src/count_m6.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/FPGA/Altera/seg/seg_test_3/src/count_m6.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA/Altera/seg/seg_test_3/src|E:/FPGA/Altera/seg/seg_test_3/src/count_m6.v|
+!i113 1
+R6
+R7
+R8
+vseg_decoder
+R1
+!i10b 1
+!s100 Mh<:PPd=ZNG=]FEPD7Fef2
+IUVS3Dk;2=@1lUSX9f41f80
+R2
+R0
+w1680676456
+8E:/FPGA/Altera/seg/seg_test_3/src/seg_decoder.v
+FE:/FPGA/Altera/seg/seg_test_3/src/seg_decoder.v
+L0 29
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/FPGA/Altera/seg/seg_test_3/src/seg_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA/Altera/seg/seg_test_3/src|E:/FPGA/Altera/seg/seg_test_3/src/seg_decoder.v|
+!i113 1
+R6
+R7
+R8
+vseg_test
+R1
+!i10b 1
+!s100 <=QTk9[__]cf14[fFn7;71
+IFfW1U[G7m3SBLMFfzoFT12
+R2
+R0
+w1730798051
+8E:/FPGA/Altera/seg/seg_test_3/src/seg_test.v
+FE:/FPGA/Altera/seg/seg_test_3/src/seg_test.v
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/FPGA/Altera/seg/seg_test_3/src/seg_test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA/Altera/seg/seg_test_3/src|E:/FPGA/Altera/seg/seg_test_3/src/seg_test.v|
+!i113 1
+R6
+R7
+R8
+vseg_test_time
+Z9 !s110 1732264720
+!i10b 1
+!s100 6n[ZRGWlmkCHY5?YK7`>f3
+I<CQQ3fL>[U9oNk>Hhd25k1
+R2
+R0
+w1730875334
+8E:/FPGA/Altera/seg/seg_test_3/src/seg_test_time.v
+FE:/FPGA/Altera/seg/seg_test_3/src/seg_test_time.v
+L0 1
+R4
+r1
+!s85 0
+31
+Z10 !s108 1732264720.000000
+!s107 E:/FPGA/Altera/seg/seg_test_3/src/seg_test_time.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA/Altera/seg/seg_test_3/src|E:/FPGA/Altera/seg/seg_test_3/src/seg_test_time.v|
+!i113 1
+R6
+R7
+R8
+vtb_seg_test
+R9
+!i10b 1
+!s100 L5i=o=OY8WPM5Z035=EUG3
+IGAKBDLlKOz3CcFR?=I6KF3
+R2
+R0
+w1730794389
+8E:/FPGA/Altera/seg/seg_test_3/src/tb_seg_test.v
+FE:/FPGA/Altera/seg/seg_test_3/src/tb_seg_test.v
+L0 2
+R4
+r1
+!s85 0
+31
+R10
+!s107 E:/FPGA/Altera/seg/seg_test_3/src/tb_seg_test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA/Altera/seg/seg_test_3/src|E:/FPGA/Altera/seg/seg_test_3/src/tb_seg_test.v|
+!i113 1
+R6
+R7
+R8
+vuart_rx
+R1
+!i10b 1
+!s100 2K7z>nnX9Ic[h>mTH`9`[1
+I9enV1cB^>JkUmYaOV;EF31
+R2
+R0
+w1726814320
+8E:/FPGA/Altera/seg/seg_test_3/src/uart_rx.v
+FE:/FPGA/Altera/seg/seg_test_3/src/uart_rx.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/FPGA/Altera/seg/seg_test_3/src/uart_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA/Altera/seg/seg_test_3/src|E:/FPGA/Altera/seg/seg_test_3/src/uart_rx.v|
+!i113 1
+R6
+R7
+R8
+vuart_seg
+R9
+!i10b 1
+!s100 i1FA_C<VOPJi2<DgneELd1
+I=RQ3YSBbmIc54Lm?ISbeg0
+R2
+R0
+w1730793818
+8E:/FPGA/Altera/seg/seg_test_3/src/uart_seg.v
+FE:/FPGA/Altera/seg/seg_test_3/src/uart_seg.v
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+!s107 E:/FPGA/Altera/seg/seg_test_3/src/uart_seg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA/Altera/seg/seg_test_3/src|E:/FPGA/Altera/seg/seg_test_3/src/uart_seg.v|
+!i113 1
+R6
+R7
+R8
